@@ -1,0 +1,29 @@
+<div class="form-inline">
+  <div class="form-group">
+    <label for="symbol">Symbol: </label>
+    <input #symbol type="text" class="form-control" id="symbol" placeholder="APPL">
+  </div>
+  <div class="form-group" style="margin-left: 20px;">
+    <label for="company">Company: </label>
+    <input #company type="text" class="form-control" id="company"
+           placeholder="Apple">
+  </div>
+  <button class="btn btn-default" (click)="add(symbol.value, company.value);
+symbol.value=''; company.value = ''">Add Stock</button>
+</div>
+
+<div class="panel panel-warning">
+  <div class="panel-heading"><h2>Available stocks</h2></div>
+  <table class="table table-striped">
+    <tr>
+      <th>Symbol</th>
+      <th>Company</th>
+      <th>Price</th>
+    </tr>
+    <tr *ngFor="let stock of stocks" >
+      <td>{{stock.getSymbol()}}</td>
+      <td>{{stock.getCompany()}}</td>
+      <td>{{1+1}}</td>
+    </tr>
+  </table>
+</div>

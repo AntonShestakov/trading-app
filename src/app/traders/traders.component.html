@@ -1,0 +1,27 @@
+<div class="form-inline">
+  <div class="form-group">
+    <label for="name">Name: </label>
+    <input #name type="text" class="form-control" id="name" placeholder="Oleg">
+  </div>
+  <button class="btn btn-default" (click)="add(name.value); name.value='';">Add
+    Trader</button>
+</div>
+<br><br>
+
+<div class="panel panel-warning">
+  <div class="panel-heading"><h2>Traders</h2></div>
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Unreleased PnL</th>
+      <th>Released PnL</th>
+      <th>Total PnL</th>
+    </tr>
+    <tr *ngFor="let trader of traders" >
+      <td>{{trader.getName()}}</td>
+      <td>{{trader.getUnreleasedPnL()}}</td>
+      <td>{{trader.getReleasedPnL()}}</td>
+      <td>{{trader.getTotalPnL()}}</td>
+    </tr>
+  </table>
+</div>
