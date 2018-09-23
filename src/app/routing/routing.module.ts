@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule,Routes} from '@angular/router';
-import {MarketComponent} from '../market/market.component';
-import {TradersComponent} from '../traders/traders.component';
+import {  RouterModule,Routes} from '@angular/router';
+import {  MarketComponent} from '../market/market.component';
+import {  TradersComponent} from '../traders/traders.component';
 
 const routes: Routes = [
 
