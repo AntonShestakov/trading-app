@@ -23,7 +23,7 @@ symbol.value=''; company.value = ''">Add Stock</button>
     <tr *ngFor="let stock of stocks" >
       <td>{{stock.getSymbol()}}</td>
       <td>{{stock.getCompany()}}</td>
-      <td>{{1+1}}</td>
+      <td>{{stock.getPrice()}}</td>
     </tr>
   </table>
 </div>
