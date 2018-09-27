@@ -4,7 +4,10 @@ import {  Stock } from '../domain/Stock';
 @Injectable({
   providedIn: 'root'
 })
-export class MarketServiceImpl implements MarketService{
+
+
+
+export class MarketServiceImpl implements MarketService {
 
   stocks: Stock[];
   counter: number;
