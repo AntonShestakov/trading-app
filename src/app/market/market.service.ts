@@ -1,15 +1,33 @@
-import { Injectable } from '@angular/core';
-import {  Stock } from '../domain/Stock';
+import {Injectable} from '@angular/core';
+import {Stock} from '../domain/Stock';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class MarketServiceImpl {
 
   stocks: Stock[];
   counter: number;
 
-  constructor() {  this.stocks  = this.getMockStocks();}
+  constructor(private httpClient: HttpClient) {
+    this.stocks = [];
+    this.getStockData().subscribe(
+      data =>
+      {
+        for (let md of data)
+        {
+          this.stocks.push(new Stock(md.symbol, md.company, this));
+        }
+      },
+      error =>
+      {
+        console.log('Cannot get market data from the server!!!');
+      }
+    );
+  }
 
   add(symbol: string, company: string)
   {
@@ -17,12 +35,12 @@ export class MarketServiceImpl {
   }
 
   private getMockStocks(): Stock[]{
-    let stocks: Stock[] = [];
+   /* let stocks: Stock[] = [];
     stocks.push(new Stock('BA', 'Boeing', this));
     stocks.push(new Stock('CAT','Caterpillar',  this));
-    stocks.push(new Stock('KO','Coca-Cola', this));
+    stocks.push(new Stock('KO','Coca-Cola', this));*/
 
-    return stocks;
+    return this.getStockData();
   }
 
   getStocks(): Stock[]{
@@ -51,4 +69,16 @@ export class MarketServiceImpl {
     this.add(symbol, company);
   }
 
+  private getStockData(): Observable <MarketData[]>
+  {
+    return this.httpClient.get<MarketData[]>('assets/market-data.json');
+  }
+
+}
+
+
+interface MarketData
+{
+  symbol: string,
+  company: string
 }
