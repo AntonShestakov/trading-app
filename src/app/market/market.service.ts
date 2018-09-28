@@ -4,10 +4,7 @@ import {  Stock } from '../domain/Stock';
 @Injectable({
   providedIn: 'root'
 })
-
-
-
-export class MarketServiceImpl implements MarketService {
+export class MarketServiceImpl {
 
   stocks: Stock[];
   counter: number;
@@ -16,15 +13,14 @@ export class MarketServiceImpl implements MarketService {
 
   add(symbol: string, company: string)
   {
-    this.stocks.push(new Stock(symbol, company));
+    this.stocks.push(new Stock(symbol, company, this));
   }
 
   private getMockStocks(): Stock[]{
     let stocks: Stock[] = [];
-
-    stocks.push(new Stock('BA','Boeing'));
-    stocks.push(new Stock('CAT','Caterpillar'));
-    stocks.push(new Stock('KO','Coca-Cola'));
+    stocks.push(new Stock('BA', 'Boeing', this));
+    stocks.push(new Stock('CAT','Caterpillar',  this));
+    stocks.push(new Stock('KO','Coca-Cola', this));
 
     return stocks;
   }
@@ -34,7 +30,7 @@ export class MarketServiceImpl implements MarketService {
   }
 
   getPrice(symbol: string): number{
-    return Math.random()*1000*symbol.length;
+    return this.getRoundedPrice(symbol);
   }
   getUpdatedPrice(currentPrice: number): number{
     let multiplier  = 1;
@@ -45,18 +41,14 @@ export class MarketServiceImpl implements MarketService {
     }
     return  Math.round((currentPrice+(Math.random() *multiplier))  * 100+Number.EPSILON)/100;
   }
+  private getRoundedPrice(symbol: string): number
+  {
+    return Math.round((Math.random() * 1000 * symbol.length)
+      * 100 + Number.EPSILON) / 100;
+  }
 
   addStock(symbol: string, company: string) {
     this.add(symbol, company);
   }
-
-}
-
-export interface MarketService
-{
-  getPrice(symbol: string): number;
-  getUpdatedPrice(currentPrice: number): number;
-  getStocks(): Stock[];
-  addStock(symbol: string,  company:  string);
 
 }

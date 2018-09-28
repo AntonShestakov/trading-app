@@ -6,7 +6,7 @@ import { MarketComponent } from './market/market.component';
 import { TradersComponent } from './traders/traders.component';
 import {RoutingModule} from './routing/routing.module';
 import {TradersService} from './traders/traders.service';
-import {MarketServiceImpl, MarketService} from './market/market.service';
+import {MarketServiceImpl} from './market/market.service';
 
 @NgModule({
   declarations: [
@@ -18,8 +18,7 @@ import {MarketServiceImpl, MarketService} from './market/market.service';
     BrowserModule,
     RoutingModule
   ],
-  providers: [TradersService, {provide: MarketService, useClass: MarketServiceImpl}
-  ],
+  providers: [TradersService, MarketServiceImpl],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
