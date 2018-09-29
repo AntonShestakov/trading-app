@@ -1,0 +1,122 @@
+[
+  {
+    "symbol": "MMM",
+    "company": "3M"
+  },
+  {
+    "symbol": "AXP",
+    "company": "American Express"
+  },
+  {
+    "symbol": "AAPL",
+    "company": "Apple"
+  },
+  {
+    "symbol": "BA",
+    "company": "Boeing"
+  },
+  {
+    "symbol": "CAT",
+    "company": "Caterpillar"
+  },
+  {
+    "symbol": "CVX",
+    "company": "Chevron"
+  },
+  {
+    "symbol": "CSCO",
+    "company": "Cisco"
+  },
+  {
+    "symbol": "KO",
+    "company": "Coca-Cola"
+  },
+  {
+    "symbol": "DIS",
+    "company": "Disney"
+  },
+  {
+    "symbol": "DD",
+    "company": "E I du Pont de Nemours and Co"
+  },
+  {
+    "symbol": "XOM",
+    "company": "Exxon Mobil"
+  },
+  {
+    "symbol": "GE",
+    "company": "General Electric"
+  },
+  {
+    "symbol": "GS",
+    "company": "Goldman Sachs"
+  },
+  {
+    "symbol": "HD",
+    "company": "Home Depot"
+  },
+  {
+    "symbol": "IBM",
+    "company": "IBM"
+  },
+  {
+    "symbol": "INTC",
+    "company": "Intel"
+  },
+  {
+    "symbol": "JNJ",
+    "company": "Johnson & Johnson"
+  },
+  {
+    "symbol": "JPM",
+    "company": "JPMorgan Chase"
+  },
+  {
+    "symbol": "MCD",
+    "company": "McDonald's"
+  },
+  {
+    "symbol": "MRK",
+    "company": "Merck"
+  },
+  {
+    "symbol": "MSFT",
+    "company": "Microsoft"
+  },
+  {
+    "symbol": "NKE",
+    "company": "Nike"
+  },
+  {
+    "symbol": "PFE",
+    "company": "Pfizer"
+  },
+  {
+    "symbol": "PG",
+    "company": "Procter & Gamble"
+  },
+  {
+    "symbol": "TRV",
+    "company": "Travelers Companies Inc"
+  },
+  {
+    "symbol": "UTX",
+    "company": "United Technologies"
+  },
+  {
+    "symbol": "UNH",
+    "company": "UnitedHealth"
+  },
+  {
+    "symbol": "VZ",
+    "company": "Verizon"
+  },
+  {
+    "symbol": "V",
+    "company": "Visa"
+  },
+  {
+    "symbol": "WMT",
+    "company": "Wal-Mart"
+  }
+]
