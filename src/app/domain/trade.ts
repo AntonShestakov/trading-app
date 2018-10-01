@@ -2,7 +2,7 @@ import {Stock} from './Stock';
 
 export class Trade {
   private mark: number;
-  private last: number;
+ // private last: number;
 
   private closePrice: number;
   private _isOpen: boolean;
@@ -54,12 +54,11 @@ export class Trade {
 
   getPnL(): number{
     return
-        this._isOpen: this.getUnreleasedPnL() ? this.getReleasedPnL();
+        this._isOpen? this.getUnreleasedPnL() : this.getReleasedPnL();
   }
 
 
-  private getRoundedNumber(num: number) : number
-  {
+  private getRoundedNumber(num: number) : number  {
     return Math.round(num * 100 + Number.EPSILON) / 100;
   }
 }
