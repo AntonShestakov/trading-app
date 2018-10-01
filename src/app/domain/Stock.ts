@@ -11,12 +11,7 @@ export class Stock
     this.initPriceFetcher();
   }
 
-  private getRoundedPrice(): number
-  {
-    return Math.round((Math.random() * 1000 * this.symbol.length) * 100 +
-      Number.EPSILON) / 100;
-  }
-  getSymbol(): string
+   getSymbol(): string
   {
     return this.symbol;
   }
@@ -27,7 +22,7 @@ export class Stock
 
   getPrice(): number
   {
-    return this.getRoundedPrice();
+    return this.price;
   }
 
   private initPriceFetcher()
@@ -39,6 +34,6 @@ export class Stock
       {
         this.price = this.marketService.getPrice(this.symbol);
       }
-    }, 10000);
+    }, 1000);
   }
 }

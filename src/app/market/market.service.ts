@@ -34,16 +34,17 @@ export class MarketServiceImpl {
     this.stocks.push(new Stock(symbol, company, this));
   }
 
-  private getMockStocks(): Stock[]{
-   /* let stocks: Stock[] = [];
-    stocks.push(new Stock('BA', 'Boeing', this));
-    stocks.push(new Stock('CAT','Caterpillar',  this));
-    stocks.push(new Stock('KO','Coca-Cola', this));*/
+  /* private getMockStocks(): Stock[]{
 
+  /* let stocks: Stock[] = [];
+     stocks.push(new Stock('BA', 'Boeing', this));
+     stocks.push(new Stock('CAT','Caterpillar',  this));
+     stocks.push(new Stock('KO','Coca-Cola', this));
     return this.getStockData();
-  }
+  }*/
 
-  getStocks(): Stock[]{
+
+getStocks(): Stock[]{
     return this.stocks;
   }
 
