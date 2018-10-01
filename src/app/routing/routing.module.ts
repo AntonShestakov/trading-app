@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import {  RouterModule,Routes} from '@angular/router';
 import {  MarketComponent} from '../market/market.component';
 import {  TradersComponent} from '../traders/traders.component';
+import {  TraderDetailsComponent} from '../trader-details/trader-details.component';
 
 const routes: Routes = [
 
   {path:  'traders',  component: TradersComponent},
   {path:  'market',  component: MarketComponent},
+  {path: 'traders/details/Oleg', component: TraderDetailsComponent},
   {path: '', redirectTo: '/market',pathMatch: 'full'}
 ];
 
