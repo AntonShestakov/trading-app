@@ -34,14 +34,10 @@ export class MarketServiceImpl {
     this.stocks.push(new Stock(symbol, company, this));
   }
 
-  /* private getMockStocks(): Stock[]{
+  delete(symbol: string){
+      console.log(this.stocks.filter((value)=> {value.getSymbol()==symbol}));
 
-  /* let stocks: Stock[] = [];
-     stocks.push(new Stock('BA', 'Boeing', this));
-     stocks.push(new Stock('CAT','Caterpillar',  this));
-     stocks.push(new Stock('KO','Coca-Cola', this));
-    return this.getStockData();
-  }*/
+  }
 
 
 getStocks(): Stock[]{

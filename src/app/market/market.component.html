@@ -19,11 +19,16 @@ symbol.value=''; company.value = ''">Add Stock</button>
       <th>Symbol</th>
       <th>Company</th>
       <th>Price</th>
+      <th> </th>
     </tr>
     <tr *ngFor="let stock of stocks" >
       <td>{{stock.getSymbol()}}</td>
       <td>{{stock.getCompany()}}</td>
       <td>{{stock.getPrice()}}</td>
+      <td>
+
+        <button class="btn btn-default" (click)="delete(stock.getSymbol())">Delete</button>
+      </td>
     </tr>
   </table>
 </div>

@@ -27,6 +27,11 @@ export class MarketComponent implements OnInit {
     this.updateStoks();
   }
 
+  delete(symbol: string){
+    this.marketService.delete(symbol);
+    this.updateStoks();
+  }
+
   private getMockStocks(): Stock[]{
    /* let stocks: Stock[] = [];
     stocks.push(new Stock('BA','Boeing', this));
