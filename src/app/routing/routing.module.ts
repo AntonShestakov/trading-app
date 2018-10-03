@@ -9,8 +9,8 @@ const routes: Routes = [
 
   {path:  'traders',  component: TradersComponent},
   {path:  'market',  component: MarketComponent},
-  {path: 'traders/details/Oleg', component: TraderDetailsComponent},
-  {path: '', redirectTo: '/market',pathMatch: 'full'}
+  {path:  'traders/details/Oleg', component: TraderDetailsComponent},
+  {path:  '', redirectTo: '/market',pathMatch: 'full'}
 ];
 
 @NgModule({
