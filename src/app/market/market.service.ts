@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Stock} from '../domain/Stock';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import {Trade} from '../domain/trade';
 
 @Injectable({
   providedIn: 'root'
@@ -34,9 +35,26 @@ export class MarketServiceImpl {
     this.stocks.push(new Stock(symbol, company, this));
   }
 
+// to do
   delete(symbol: string){
       console.log(this.stocks.filter((value)=> {value.getSymbol()==symbol}));
 
+  }
+//
+
+  buyStock(symbol: string, count: number): Trade
+  {
+    let stock: Stock = this.getStock(symbol);
+    if (stock)
+    {
+      return new Trade(stock, count, stock.getPrice());
+    }
+    return null;
+  }
+
+  private getStock(symbol: string): Stock
+  {
+    return this.stocks.find(stock => stock.getSymbol() == symbol);
   }
 
 
