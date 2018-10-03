@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Trader } from '../domain/Trader';
+import {  TradersService  } from '../traders/traders.service';
 
 @Component({
   selector: 'app-trader-details',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TraderDetailsComponent implements OnInit {
 
-  constructor() { }
+  trader: Trader;
+
+  constructor(private traderService: TradersService) {
+    this.trader = new Trader('');
+  }
 
   ngOnInit() {
+    this.traderService.getTrader('Oleg').then(trader=>this.trader=trader);
   }
 
 }
