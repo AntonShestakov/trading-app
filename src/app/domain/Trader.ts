@@ -29,7 +29,7 @@ export class Trader
     );
   }
 
-   getName(): string  {
+  getName(): string  {
     return this.name;
   }
 
@@ -59,8 +59,7 @@ export class Trader
     return this.getRoundedPnL(this.getReleasedPnL() + this.getUnreleasedPnL());
   }
 
-  private getRoundedPnL(pnl): number
-  {
+  private getRoundedPnL(pnl): number  {
     return Math.round(pnl * 100 + Number.EPSILON) / 100;
   }
 
