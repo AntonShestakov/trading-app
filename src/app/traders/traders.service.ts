@@ -26,9 +26,16 @@ export class TradersService  {
     this.traders.push(new Trader(name));
   }
 
-  getTraders(): Promise<Trader[]>
-  {
+  getTraders(): Promise<Trader[]>  {
     return new Promise(resolve =>
       setTimeout(() => resolve(Promise.resolve(this.traders)), 100));
+  }
+
+  getTrader(name: string): Promise<Trader>  {
+    return new Promise(resolve =>
+    {
+      setTimeout(() =>
+        resolve(Promise.resolve(this.traders.find(t => name === t.getName()))), 0);
+    });
   }
 }
