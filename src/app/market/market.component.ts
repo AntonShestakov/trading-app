@@ -33,12 +33,7 @@ export class MarketComponent implements OnInit {
   }
 
   private getMockStocks(): Stock[]{
-   /* let stocks: Stock[] = [];
-    stocks.push(new Stock('BA','Boeing', this));
-    stocks.push(new Stock('CAT','Caterpillar','marketService'));
-    stocks.push(new Stock('KO','Coca-Cola', 'marketService'));*/
-
-    return this.marketService.getStocks();
+       return this.marketService.getStocks();
   }
   private updateStoks(){
     this.stocks = this.marketService.getStocks();
