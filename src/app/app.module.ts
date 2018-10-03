@@ -8,7 +8,8 @@ import {TradersComponent} from './traders/traders.component';
 import {RoutingModule} from './routing/routing.module';
 import {TradersService} from './traders/traders.service';
 import {MarketServiceImpl} from './market/market.service';
-import { TraderDetailsComponent } from './trader-details/trader-details.component';
+import {TraderDetailsComponent } from './trader-details/trader-details.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
