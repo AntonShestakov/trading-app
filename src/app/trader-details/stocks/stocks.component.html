@@ -1,0 +1,10 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+<mat-form-field>
+  <input type="text" matInput
+         [formControl]="stockInput" [matAutocomplete]="auto" id="stockInput" >
+</mat-form-field>
+
+<mat-autocomplete #auto="matAutocomplete">
+  <mat-option *ngFor="let stock of filteredStocks | async" [value]="stock.getSymbol()">

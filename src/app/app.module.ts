@@ -11,6 +11,9 @@ import {MarketServiceImpl} from './market/market.service';
 import {TraderDetailsComponent } from './trader-details/trader-details.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {FormControl} from '@angular/forms';
+import {StocksComponent} from './trader-details/stocks/stocks.component';
+import {MatAutocompleteModule, MatInputModule, MatOptionModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -18,13 +21,19 @@ import {FormControl} from '@angular/forms';
     AppComponent,
     MarketComponent,
     TradersComponent,
-    TraderDetailsComponent
+    TraderDetailsComponent,
+    StocksComponent
   ],
   imports: [
     BrowserModule,
     RoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormControl,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatOptionModule,
+    BrowserAnimationsModule
   ],
   providers: [TradersService, MarketServiceImpl],
   bootstrap: [AppComponent]
