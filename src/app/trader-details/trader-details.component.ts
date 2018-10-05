@@ -6,6 +6,8 @@ import {MarketServiceImpl} from '../market/market.service';
 import {FormControl} from '@angular/forms';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 
+import {Location} from '@angular/common';
+
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -21,7 +23,7 @@ export class TraderDetailsComponent implements OnInit {
   symbolInput = new FormControl();
 
 
-  constructor(private tradersService: TradersService, private marketService: MarketServiceImpl, private route: ActivatedRoute ) {
+  constructor(private tradersService: TradersService, private marketService: MarketServiceImpl, private route: ActivatedRoute , private location: Location ) {
     this.trader = new Trader('');
   }
 
@@ -52,5 +54,10 @@ export class TraderDetailsComponent implements OnInit {
   closeTrade(trade: Trade){
 
     this.marketService.sellStock(trade);
+  }
+
+  goBack(): void
+  {
+    this.location.back();
   }
 }
