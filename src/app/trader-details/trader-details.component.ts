@@ -21,7 +21,7 @@ export class TraderDetailsComponent implements OnInit {
   symbolInput = new FormControl();
 
 
-  constructor(private traderService: TradersService, private marketService: MarketServiceImpl, private route: ActivatedRoute ) {
+  constructor(private tradersService: TradersService, private marketService: MarketServiceImpl, private route: ActivatedRoute ) {
     this.trader = new Trader('');
   }
 
