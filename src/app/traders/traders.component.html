@@ -18,7 +18,9 @@
       <th>Total PnL</th>
     </tr>
     <tr *ngFor="let trader of traders" >
-      <td>{{trader.getName()}}</td>
+      <td><a routerLink="/traders/details/{{trader.getName()}}"
+             routerLinkActive="active">
+        {{trader.getName()}}</a></td>
       <td>{{trader.getUnreleasedPnL()}}</td>
       <td>{{trader.getReleasedPnL()}}</td>
       <td>{{trader.getTotalPnL()}}</td>
