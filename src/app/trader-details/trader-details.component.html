@@ -1,3 +1,73 @@
-<p>
-  trader-details works!
-</p>
+<div class="row">
+  <div class="col-md-4">
+    <h1>{{trader.getName()}}</h1>
+    <h2>Unreleased PnL: {{trader.getUnreleasedPnL()}}</h2>
+    <h2>Released PnL: {{trader.getReleasedPnL()}}</h2>
+    <h2>Total PnL: {{trader.getTotalPnL()}}</h2>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label>Symbol</label>
+      <input type="text" class="form-control" id="symbol" [formControl]="symbolInput" >
+    </div>
+    <div class="form-group">
+      <label for="count">Count</label>
+      <input type="number" class="form-control" id="count" [formControl]="countInput" >
+    </div>
+    <button class="btn btn-success" (click)="buyStock()" id="buyStockBtn">Buy Stock</button>
+  </div>
+  <div class="col-md-4">
+  </div>
+</div>
+<br><br>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-warning">
+      <div class="panel-heading"><h2>Open positions</h2></div>
+      <table class="table table-striped">
+        <tr>
+          <th>#</th>
+          <th>Symbol</th>
+          <th>Mark</th>
+          <th>Count</th>
+          <th>Unreleased PnL</th>
+          <th></th>
+        </tr>
+        <tr *ngFor="let trade of trader.getOpenTrades(); let i = index;" >
+          <td>{{i}}</td>
+          <td>{{trade.getStockInfo()}}</td>
+          <td>{{trade.getMark()}}</td>
+          <td>{{trade.getCount()}}</td>
+          <td>{{trade.getUnreleasedPnL()}}</td>
+          <td><button class="btn btn-default" (click)="closeTrade(trade)">Close</button></td>
+        </tr>
+      </table>
+    </div>
+    <div class="panel panel-warning">
+      <div class="panel-heading"><h2>Closed Trades</h2></div>
+      <table class="table table-striped">
+        <tr>
+          <th>#</th>
+          <th>Symbol</th>
+          <th>Mark</th>
+          <th>Close Price</th>
+          <th>Count</th>
+          <th>PnL</th>
+        </tr>
+        <tr *ngFor="let trade of trader.getClosedTrades(); let i = index;" >
+          <td>{{i}}</td>
+          <td>{{trade.getStockInfo()}}</td>
+          <td>{{trade.getMark()}}</td>
+          <td>{{trade.getClosePrice()}}</td>
+          <td>{{trade.getCount()}}</td>
+          <td>{{trade.getPnL()}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div>
+    </div>
+  </div>
+</div>
