@@ -9,7 +9,7 @@ const routes: Routes = [
 
   {path:  'traders',  component: TradersComponent},
   {path:  'market',  component: MarketComponent},
-  {path:  'traders/details/Oleg', component: TraderDetailsComponent},
+  {path:  'traders/details/:name', component: TraderDetailsComponent},
   {path:  '', redirectTo: '/market',pathMatch: 'full'}
 ];
 
