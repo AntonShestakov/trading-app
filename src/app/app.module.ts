@@ -10,6 +10,7 @@ import {TradersService} from './traders/traders.service';
 import {MarketServiceImpl} from './market/market.service';
 import {TraderDetailsComponent } from './trader-details/trader-details.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {FormControl} from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {ReactiveFormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     RoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [TradersService, MarketServiceImpl],
   bootstrap: [AppComponent]
