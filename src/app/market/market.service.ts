@@ -57,8 +57,7 @@ export class MarketServiceImpl {
     return this.stocks.find(stock => stock.getSymbol() == symbol);
   }
 
-
-getStocks(): Stock[]{
+  getStocks(): Stock[]{
     return this.stocks;
   }
 
@@ -84,9 +83,14 @@ getStocks(): Stock[]{
     this.add(symbol, company);
   }
 
-  private getStockData(): Observable <MarketData[]>
-  {
+  private getStockData(): Observable <MarketData[]> {
     return this.httpClient.get<MarketData[]>('assets/market-data.json');
+  }
+
+
+  sellStock(trade: Trade): void {
+    let stock: Stock = trade.getStock();
+    trade.close(stock.getPrice());
   }
 
 }
