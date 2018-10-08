@@ -27,7 +27,6 @@ export class StocksComponent implements OnInit {
 
   ngOnInit() {
 
-
     this.stocks = this.marketService.getStocks();
 
     // this.filteredStocks = Observable.of(this.stocks);

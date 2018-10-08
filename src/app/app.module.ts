@@ -22,29 +22,17 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     TradersComponent,
     TraderDetailsComponent,
     StocksComponent
-<<<<<<< HEAD
-=======
-
->>>>>>> 397da556862ad9eb843564f0974c572c7255d7aa
   ],
   imports: [
     BrowserModule,
     RoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-<<<<<<< HEAD
-    FormControl,
-    MatInputModule,
-    MatAutocompleteModule,
-    MatOptionModule,
-    BrowserAnimationsModule
-=======
     MatInputModule,
     MatAutocompleteModule,
     MatOptionModule,
     BrowserAnimationsModule,
     FormsModule
->>>>>>> 397da556862ad9eb843564f0974c572c7255d7aa
   ],
   providers: [TradersService, MarketServiceImpl],
   bootstrap: [AppComponent]
