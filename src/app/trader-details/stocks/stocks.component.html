@@ -1,0 +1,11 @@
+
+  <mat-form-field class="example-full-width">
+    <input type="text" placeholder="Pick stock" aria-label="Number"
+           matInput [formControl]="stockInput"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let stock of filteredStocks | async" [value]="stock.getSymbol()">
+        {{stock.getSymbol()}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
