@@ -48,8 +48,8 @@ export class Trader
     let sum: number = 0;
 
     unReleasedPortfolio.forEach((value)=>
-      sum +=  value.getReleasedPnL()
-    )
+      sum +=  value.getUnreleasedPnL()
+    );
 
     return this.getRoundedPnL(sum);
   }
