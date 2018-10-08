@@ -7,8 +7,9 @@
   </div>
   <div class="col-md-4">
     <div class="form-group">
-      <label>Symbol</label>
-      <input type="text" class="form-control" id="symbol" [formControl]="symbolInput" >
+      <!--<label>Symbol</label>
+      <input type="text" class="form-control" id="symbol" [formControl]="symbolInput" >-->
+      <app-stocks (onStockSelect)="onStockSelect($event)" ></app-stocks>
     </div>
     <div class="form-group">
       <label for="count">Count</label>
