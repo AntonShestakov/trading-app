@@ -4,7 +4,7 @@
            [matAutocomplete]="auto">
     <mat-autocomplete #auto="matAutocomplete">
       <mat-option *ngFor="let stock of filteredStocks | async" [value]="stock.getSymbol()">
-        {{stock.getSymbol()}}
+        {{stock.getSymbol()}}  &gt; {{stock.getCompany()}}
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
