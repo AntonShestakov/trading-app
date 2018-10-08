@@ -1,18 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output,EventEmitter} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Stock} from '../../domain/Stock';
 import {Observable} from 'rxjs';
 import {MarketServiceImpl} from '../../market/market.service';
 import {map, startWith} from 'rxjs/operators';
 import 'rxjs-compat/add/operator/startWith';
-// import 'rxjs-compat/add/operator/startWith';
 
 @Component({
   selector: 'app-stocks',
   templateUrl: './stocks.component.html',
   styleUrls: ['./stocks.component.css']
 })
+
 export class StocksComponent implements OnInit {
+
+  @Output()  onStockSelect = new EventEmitter<Stock>();
+
+
 
   stockInput = new FormControl();
 
@@ -41,6 +45,11 @@ export class StocksComponent implements OnInit {
       if (stock != null)
       {
         this.selected = stock;
+        this.onStockSelect.emit(stock);
+      }
+      else
+      {
+        this.selected = null;
       }
     });
 
@@ -55,4 +64,12 @@ export class StocksComponent implements OnInit {
   {
     return this.stocks.find(stock => symbol === stock.getSymbol());
   }
-}
+  clean()
+  {
+    this.stockInput.setValue('');
+    this.selected = null;
+  }
+
+};
+
+
